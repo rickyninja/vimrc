@@ -53,13 +53,8 @@ nmap <s-tab> ^i<bs><esc>
 " cut or copy some text from one window and paste it in Vim.
 set pastetoggle=<F9>
 
-nnoremap <silent> _y :%!pythontidy<Enter>
-vnoremap <silent> _y :!pythontidy<Enter>
-
 
 filetype plugin on
-
-au FileType python setlocal autoindent
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
