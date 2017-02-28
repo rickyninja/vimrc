@@ -1,6 +1,10 @@
 " use visual bell instead of beeping
 set vb
 
+" ctags: look for a tags file in the directory of the current file then
+" upward until /, also in the pwd then upward until /.
+set tags=./tags;,tags;
+
 " incremental search | ignorecase when searching
 set incsearch
 set ignorecase
