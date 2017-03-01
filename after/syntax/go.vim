@@ -1,7 +1,6 @@
 " Go
 " Override settings in vim-go.
 
-let g:go_fmt_command = "goimports"
 setlocal nolist
 "setlocal listchars=eol:⏎,tab:\ \
 "setlocal listchars=tab:\ \
@@ -42,3 +41,17 @@ au FileType go nmap <leader>rv <Plug>(go-run-vertical)
 " Personalized leader keybinds
 " TODO find a way to run GoDeclsDir using <cword> as the search text
 au FileType go nmap <leader>f :GoDeclsDir<cr>
+
+" goimports uses heuristics and will sometimes remove needed imports
+let g:go_fmt_command = "goimports"
+au FileType go nmap <F10> :call GofmtToggle()<cr>
+
+" Toggle between goimports and gofmt
+function! GofmtToggle()
+    if g:go_fmt_command == "goimports"
+        let g:go_fmt_command = "gofmt"
+    else
+        let g:go_fmt_command = "goimports"
+    endif
+    echom "go_fmt_command set to " . g:go_fmt_command
+endfunction
