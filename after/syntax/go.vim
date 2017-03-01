@@ -21,7 +21,7 @@ syn keyword     goBuiltins           iota true false nil
 nmap <Home> :lp<cr>
 nmap <End> :lne<cr>
 
-" Enable leader keybinds
+" Enable vim-go leader keybinds
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -38,3 +38,7 @@ au FileType go nmap <leader>e <Plug>(go-rename)
 au FileType go nmap <leader>rt <Plug>(go-run-tab)
 au FileType go nmap <leader>rs <Plug>(go-run-split)
 au FileType go nmap <leader>rv <Plug>(go-run-vertical)
+
+" Personalized leader keybinds
+" TODO find a way to run GoDeclsDir using <cword> as the search text
+au FileType go nmap <leader>f :GoDeclsDir<cr>
