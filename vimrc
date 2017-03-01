@@ -1,3 +1,6 @@
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
+
 " use visual bell instead of beeping
 set vb
 
