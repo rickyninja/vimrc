@@ -1,6 +1,18 @@
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
+nnoremap <silent> _m :%!format-md-table.pl<Enter>
+vnoremap <silent> _m :!format-md-table.pl<Enter>
+
+" frequently switch windows, so make it a single key press.
+nnoremap <silent> , <C-w>w
+" frequently use Ctrl-W commands, reduce key presses.
+nnoremap <silent> ; <C-w>
+" backspace is difficult to map through lxc
+"nnoremap <BS> :CtrlPBuffer<CR>
+nnoremap <Enter> :CtrlPBuffer<CR>
+
+
 " use visual bell instead of beeping
 set vb
 
