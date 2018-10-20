@@ -1,6 +1,9 @@
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
+" otherwise ctrlp never finds what I'm looking for
+let g:ctrlp_max_files=0
+
 nnoremap <silent> _m :%!format-md-table.pl<Enter>
 vnoremap <silent> _m :!format-md-table.pl<Enter>
 
