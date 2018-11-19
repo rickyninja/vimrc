@@ -4,6 +4,15 @@ let mapleader = "\<Space>"
 " otherwise ctrlp never finds what I'm looking for
 let g:ctrlp_max_files=0
 
+" use Enter to select items in location list
+autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
+" restore Enter to ctrlp buffer when leaving location list
+autocmd CmdwinLeave * nnoremap <Enter> :CtrlPBuffer<CR>
+" use Enter to select items in quickfix list
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+" restore Enter to ctrlp buffer when leaving quickfix list
+autocmd BufLeave * nnoremap <Enter> :CtrlPBuffer<CR>
+
 nnoremap <silent> _m :%!format-md-table.pl<Enter>
 vnoremap <silent> _m :!format-md-table.pl<Enter>
 
