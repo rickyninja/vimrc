@@ -16,10 +16,6 @@ vnoremap <silent> _p :put! =''<cr>:!goattrib<cr>
 " override vim-go to make booleans look like builtins
 syn keyword     goBuiltins           iota true false nil
 
-" location list shortcuts
-nmap <Home> :lp<cr>
-nmap <End> :lne<cr>
-
 " Enable vim-go leader keybinds
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)

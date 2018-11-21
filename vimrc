@@ -24,6 +24,9 @@ nnoremap <silent> ; <C-w>
 "nnoremap <BS> :CtrlPBuffer<CR>
 nnoremap <Enter> :CtrlPBuffer<CR>
 
+" location list shortcuts
+nmap <Home> :lp<cr>
+nmap <End> :lne<cr>
 
 " use visual bell instead of beeping
 set vb
