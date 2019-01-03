@@ -3,6 +3,8 @@ let mapleader = "\<Space>"
 
 " otherwise ctrlp never finds what I'm looking for
 let g:ctrlp_max_files=0
+" show longer listing in search results. It will max out at window height.
+let g:ctrlp_match_window = 'min:4,max:999'
 
 " use Enter to select items in location list
 autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
