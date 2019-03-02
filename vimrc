@@ -23,6 +23,7 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
+set relativenumber
 
 " otherwise ctrlp never finds what I'm looking for
 let g:ctrlp_max_files=0

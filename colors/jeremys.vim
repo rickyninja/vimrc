@@ -1,6 +1,6 @@
 " Vim color file
-" Maintainer:   A. Sinan Unur
-" Last Change:  2001/10/04
+" Maintainer:   Jeremy Singletary
+" Last Change:  2019/03/02
 
 " Dark color scheme
 
@@ -9,7 +9,7 @@ hi clear
 if exists("syntax_on")
     syntax reset
 endif
-let g:colors_name="asu1dark"
+let g:colors_name="jeremys"
 
 " Console Color Scheme
 hi Normal       term=NONE cterm=NONE ctermfg=LightGray   ctermbg=Black
@@ -32,7 +32,7 @@ hi Directory    term=NONE cterm=NONE ctermfg=Green       ctermbg=Black
 hi WarningMsg   term=NONE cterm=NONE ctermfg=Blue        ctermbg=Yellow
 hi Error        term=NONE cterm=NONE ctermfg=DarkRed     ctermbg=Gray
 hi Cursor                            ctermfg=Black       ctermbg=Cyan
-hi LineNr       term=NONE cterm=NONE ctermfg=Red         ctermbg=Black
+hi LineNr       term=NONE cterm=NONE ctermfg=DarkGray    ctermbg=Black
 
 " GUI Color Scheme
 hi Normal       gui=NONE     guifg=White   guibg=#110022
