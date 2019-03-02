@@ -2,16 +2,19 @@
 " Language: Yaml
 " Author: Ian Young
 
+setlocal autoindent tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+setlocal indentkeys=o,O,*<Return>,!^F
+setlocal indentkeys-=0# indentkeys-=<:>
+" yaml is intolerant of tabs, so make them visible.
+setlocal list listchars=tab:¬¬
+
 if exists("b:did_indent")
   finish
 endif
-"runtime! indent/ruby.vim
-"unlet! b:did_indent
+
 let b:did_indent = 1
 
-setlocal autoindent sw=2 et
 setlocal indentexpr=GetYamlIndent()
-setlocal indentkeys=o,O,*<Return>,!^F
 
 function! GetYamlIndent()
   let prevlnum = v:lnum - 1
@@ -27,6 +30,9 @@ function! GetYamlIndent()
 
   if prevline =~ ':$'
     return increase
+  " list of maps
+  elseif prevline =~ '^\s\+\-\s\+[^:]\+:'
+    return increase
   elseif prevline =~ '^\s\+\-' && line =~ '^\s\+[^-]\+:'
     return decrease
   else
@@ -34,4 +40,4 @@ function! GetYamlIndent()
   endif
 endfunction
 
-" vim:set sw=2:
+" vim:set sw=2 ts=2 sts=2 et:
