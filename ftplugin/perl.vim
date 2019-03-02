@@ -33,8 +33,7 @@ vnoremap <silent> _p :!pod<cr>
 
 " This is for perldoc.vim
 setlocal iskeyword +=_ iskeyword +=:
-setlocal <F1>=[11~
-map <F1> :Perldoc<cword><CR>
+map K :Perldoc<cword><CR>
 "setf perl
 let g:perldoc_program='/usr/local/bin/perldoc'
 source $HOME/.vim/ftplugin/perl_doc.vim
