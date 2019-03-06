@@ -19,3 +19,6 @@
 [submodule "bundle/vim-textobj-function-perl"]
 	path = bundle/vim-textobj-function-perl
 	url = https://github.com/thinca/vim-textobj-function-perl.git
+[submodule "bundle/vim-plugin-AnsiEsc"]
+	path = bundle/vim-plugin-AnsiEsc
+	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
