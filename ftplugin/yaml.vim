@@ -5,6 +5,7 @@
 setlocal autoindent tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 setlocal indentkeys=o,O,*<Return>,!^F
 setlocal indentkeys-=0# indentkeys-=<:>
+setlocal backspace=indent " allow backspace over autoindent
 " yaml is intolerant of tabs, so make them visible.
 setlocal list listchars=tab:¬¬
 
