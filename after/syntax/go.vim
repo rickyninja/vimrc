@@ -14,7 +14,8 @@ nnoremap <silent> _p :put! =''<cr>:.!goattrib<cr>
 vnoremap <silent> _p :put! =''<cr>:!goattrib<cr>
 
 " override vim-go to make booleans look like builtins
-syn keyword     goBuiltins           iota true false nil
+syn keyword     goStatement          iota true false nil
+hi def link     goStatement          Statement
 
 " Enable vim-go leader keybinds
 au FileType go nmap <leader>r <Plug>(go-run)
