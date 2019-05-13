@@ -24,6 +24,11 @@ if &term =~ '^screen'
 endif
 
 set relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained * set relativenumber
+  autocmd BufLeave,FocusLost   * set norelativenumber
+augroup END
 
 " otherwise ctrlp never finds what I'm looking for
 let g:ctrlp_max_files=0
