@@ -44,6 +44,8 @@ autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 " restore Enter to ctrlp buffer when leaving quickfix list
 autocmd BufLeave * nnoremap <Enter> :CtrlPBuffer<CR>
 
+set nofoldenable    " disable folding
+
 nnoremap <silent> _m :%!format-md-table.pl<Enter>
 vnoremap <silent> _m :!format-md-table.pl<Enter>
 
