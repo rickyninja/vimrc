@@ -1,0 +1,253 @@
+# loosely based on ~/.vim/bundle/vim-go/gosnippets/snippets/go.snip
+
+snippet : "shorthand variable declaration"
+	${1} := ${0}
+
+snippet anon "anonymous function"
+	${1:fnvar} := func() {
+		${2:fnbody}
+	}
+	$0
+
+snippet ap "append"
+	append(${1:slice}, ${0:value})
+
+snippet ap= "append assign"
+	${1:slice} = append($1, ${0:value})
+
+snippet case "case"
+	case ${1:value}:
+		$0
+
+snippet df "defer"
+	defer ${1:func}(${2})
+	$0
+
+snippet dff "defer func wrapper"
+	defer func() {
+		${1}
+	}()
+	$0
+
+snippet rec "defer with recover"
+	defer func() {
+		if r := recover; r != nil {
+			${1}
+		}
+		${2}
+	}()
+	$0
+
+# Unable to define multiple methods and have a $0 tab stop reached.
+# Leaving $0 so it adds newline after closing brace.
+# int conflicts with int type often, intr tab completes from "int".
+snippet in "interface definition"
+	type ${1:name} interface {
+		${2}(${3}) ${4}
+	}
+	$0
+
+snippet st "struct"
+	type ${1:Type} struct {
+		${2}
+	}
+	$0
+
+# Put $0 inside block or you can't expand another snippet.
+snippet if "if"
+	if ${1:condition} {
+		${0}
+	}
+
+snippet el "else"
+	else {
+		${0}
+	}
+
+snippet ife "if else"
+	if ${1:condition} {
+		${2}
+	} else {
+		${3}
+	}
+
+snippet erri "error inline"
+	if err := ${1:function}; err != nil {
+		${0}
+	}
+
+# press backspace to return only the error
+snippet re "return error"
+	if err != nil {
+		return ${1:nil, }err
+	}
+	$0
+
+# Put $0 inside the block so other snippets may be expanded.
+snippet err "error"
+	if err != nil {
+		${0}
+	}
+
+snippet sp "fmt Sprintf"
+	fmt.Sprintf("${1:format}", ${2:...})
+
+snippet ff "fmt Printf"
+	fmt.Printf("${1}\n", ${2:...})
+
+snippet fff "fmt Fprintf"
+	fmt.Fprintf(${1}, "${2}\n", ${3:...})
+
+snippet fl "fmt Println"
+	fmt.Println(${1})
+
+snippet fe "fmt Errorf"
+	fmt.Errorf("${1}", ${2})
+
+snippet lf "log Printf"
+	log.Printf("${1}", ${2:...})
+
+snippet ll "log Println"
+	log.Println(${1})
+
+snippet te "test Errorf"
+	t.Errorf("${1}", ${2})
+
+snippet tl "test Logf"
+	t.Logf("${1}", ${2})
+
+snippet tf "test Logf"
+	t.Fatalf("${1}", ${2})
+
+snippet terf "test Fatal"
+	if err != nil {
+		t.Fatal(err)
+	}
+	$0
+
+snippet tfun "test func"
+	func Test${1:Name}(t *testing.T) {
+		t.Parallel()
+		${0}
+	}
+
+snippet thel "test helper"
+	func ${1:name}(t *testing.T${2}) ${3} {
+		t.Helper()
+		${4}
+	}
+	${0}
+
+# Lay down boilerplate, and don't go nuts with tab stops.
+snippet tt "test table"
+	var tests = []struct{
+		name string
+		want string // TODO correct type?
+	}{
+		{${0}},
+	}
+	for _, tc := range tests {
+		tc := tc
+		t.Run(tc.name, func(t *testing.T) {
+			t.Parallel()
+			got := ${1:function}(${2})
+			if tc.want != got {
+				t.Errorf("wrong _blank_ got %v want %v", got, tc.want)
+			}
+		})
+	}
+
+snippet json "json struct tag"
+	\`json: "${1:name}"\`
+
+snippet yaml "yaml struct tag"
+	\`yaml: "${1:name}"\`
+
+snippet for "for loop"
+	for ${1} {
+		${0}
+	}
+
+snippet fori "for integer loop"
+	for ${1:i} := 0; $1 < ${2:N}; $1++ {
+		${0}
+	}
+
+snippet forr "for range loop"
+	for ${1}, ${2} := range ${3} {
+		${0}
+	}
+
+# Press spacebar to remove error return.  If backspace is pressed $0 tab stop
+# will not work.
+snippet fun "function"
+	func ${1:name}(${2}) ${3:error} {
+		${4}
+	}
+	$0
+
+snippet make "make slice"
+	make([]${1:Type}, ${2})
+
+snippet makem "make map"
+	make(map[${1:Type}]${2:Type})
+
+snippet map "map"
+	map[${1:Type}]${2:Type}
+
+snippet main "func main"
+	func main() {
+		${0}
+	}
+
+snippet meth "method"
+	func (${1:reciever} ${2:Type}) ${3:name}(${4}) ${5:error} {
+		${6}
+	}
+	$0
+
+snippet ok "if !ok"
+	if !ok {
+		${0}
+	}
+
+snippet sel "select"
+	select {
+	case ${1:v} := <-${2:chan}:
+		${0}
+	}
+
+snippet swc "switch case"
+	switch ${1} {
+	case ${2}:
+		${0}
+	}
+
+snippet swt "type switch"
+	switch ${1:v} := ${2:var}.(type) {
+	case ${3:Type}:
+		${0}
+	}
+
+snippet exam "test example"
+	func Example${1:Method}() {
+		${0}
+		// Output:
+	}
+
+snippet ben "benchmark"
+	func Benchmark${1:Method}(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			${0}
+		}
+	}
+
+snippet vars "multi variable declaration"
+	var (
+		${0}
+	)
+
+snippet cons "multi const declaration"
+	const (
+		${0}
+	)

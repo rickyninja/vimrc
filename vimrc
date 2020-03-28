@@ -104,14 +104,6 @@ set statusline=%F%m%r%h%w\ line\ %l\ of\ %L\ (%p%%)\ col\ %v\ \ \ \%03.3b,0x\%02
 " dont use Q for Ex mode
 map Q :q
 
-" make tab in v mode ident code
-vmap <tab> >gv
-vmap <s-tab> <gv
-
-" make tab in normal mode ident code
-nmap <tab> I<tab><esc>
-nmap <s-tab> ^i<bs><esc>
-
 " paste mode - this will avoid unexpected effects when you
 " cut or copy some text from one window and paste it in Vim.
 set pastetoggle=<F9>
