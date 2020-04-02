@@ -89,6 +89,12 @@ snippet err "error"
 		${0}
 	}
 
+snippet errh "http error"
+	if err != nil {
+		http.Error(${1}, err.Error(), http.Status${0:InternalServerError})
+		return
+	}
+
 snippet sp "fmt Sprintf"
 	fmt.Sprintf("${1:format}", ${2:...})
 
