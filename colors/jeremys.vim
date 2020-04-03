@@ -23,7 +23,7 @@ hi Comment      term=NONE cterm=NONE ctermfg=DarkGray    ctermbg=Black
 hi Preproc      term=NONE cterm=NONE ctermfg=DarkGreen   ctermbg=Black
 hi Type         term=NONE cterm=NONE ctermfg=DarkMagenta ctermbg=Black
 hi Identifier   term=NONE cterm=NONE ctermfg=Cyan        ctermbg=Black
-hi StatusLine   term=BOLD cterm=NONE ctermfg=Black       ctermbg=Yellow
+hi StatusLine   term=BOLD cterm=NONE ctermfg=Black       ctermbg=Cyan
 hi StatusLineNC term=NONE cterm=NONE ctermfg=Black       ctermbg=Gray
 hi Visual       term=NONE cterm=NONE ctermfg=White       ctermbg=DarkCyan
 hi Search       term=NONE cterm=NONE ctermbg=Yellow      ctermfg=DarkBlue
