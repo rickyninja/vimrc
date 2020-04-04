@@ -25,6 +25,6 @@
 [submodule "pack/tlib/start/tlib"]
 	path = pack/tlib/start/tlib
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule "pack/vim-add-mw-utils/start/vim-add-mw-utils"]
-	path = pack/vim-add-mw-utils/start/vim-add-mw-utils
+[submodule "pack/vim-addon-mw-utils/start/vim-add-mw-utils"]
+	path = pack/vim-addon-mw-utils/start/vim-add-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
