@@ -19,3 +19,12 @@
 [submodule "bundle/vim-plugin-AnsiEsc"]
 	path = bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
+[submodule "pack/snipmate/start/snipmate"]
+	path = pack/snipmate/start/snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "pack/tlib/start/tlib"]
+	path = pack/tlib/start/tlib
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "pack/vim-add-mw-utils/start/vim-add-mw-utils"]
+	path = pack/vim-add-mw-utils/start/vim-add-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
