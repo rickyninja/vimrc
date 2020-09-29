@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# my tweaked version of https://stackoverflow.com/questions/5626188/ctags-ignore-lists-for-libc6-libstdc-and-boost
+
+## set up tags for libc, the standard C library
+
+ignore=$(cat <<EOF
+__attribute__
+__attribute_deprecated__
+__attribute_format_arg__
+__attribute_format_strfmon__
+__attribute_malloc__
+__attribute_noinline__
+__attribute_pure__
+__attribute_used__
+__attribute_warn_unused_result__
+__wur
+__THROW
+__nonnull+
+EOF
+)
+
+ctags --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q -I <(echo "$ignore") -f ~/.tags.c -L <(dpkg -L libc6-dev | grep -o '/usr/include/.*\.h')
+
+# Diable below here because I'm not doing C++ dev, and the errors due to missing packages causing me issues.
+
+#dpkg -L libstdc++6-4.6-dev | grep -E -o '/usr/include/.*\.(h|hpp)' >> ~/.vim/tags/stdlibcpp-filelist
+#ctags --sort=foldcase -R --c++-kinds=+p --fields=+iaS --extra=+q -f ~/.vim/tags/stdlibcpp -L ~/.vim/tags/stdlibcpp-filelist
+
+# For Boost
+#dpkg -L boost | grep -E -o '/usr/include/.*\.(h|hpp)' | grep -v '/usr/include/boost/typeof/' > ~/.vim/tags/boost-filelist
+#ctags --sort=foldcase --c++-kinds=+p --fields=+iaS --extra=+q -f ~/.vim/tags/boost -L ~/.vim/tags/boost-filelist
