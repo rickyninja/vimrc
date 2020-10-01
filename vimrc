@@ -109,7 +109,7 @@ map Q :q
 set pastetoggle=<F9>
 
 
-filetype plugin on
+filetype plugin indent on
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
