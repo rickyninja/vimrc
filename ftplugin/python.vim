@@ -4,5 +4,7 @@ setlocal shiftwidth=4
 setlocal textwidth=80
 setlocal smarttab
 setlocal expandtab
-" enable backspace to unindent, go to previous line, etc.
-setlocal backspace=indent,eol,start
+
+" LspDefinition is superior to ctags if you have python-language-server
+" installed.
+nnoremap <buffer> <silent> <C-]> :LspDefinition<cr>

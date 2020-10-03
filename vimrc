@@ -54,6 +54,9 @@ nnoremap <silent> ; <C-w>
 "nnoremap <BS> :CtrlPBuffer<CR>
 nnoremap <Enter> :CtrlPBuffer<CR>
 
+" enable backspace to unindent, go to previous line, etc.
+set backspace=indent,eol,start
+
 " location list shortcuts
 nmap <Home> :lp<cr>
 nmap <End> :lne<cr>
