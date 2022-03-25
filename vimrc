@@ -79,6 +79,8 @@ syntax on
 "autocmd FileType perl set autoindent|set smartindent
 set smartindent
 
+let g:is_bash = 1 " enable bash syntax highlight for ft=sh
+
 " 4 space tabs
 set tabstop=4
 set shiftwidth=4
