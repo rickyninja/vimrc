@@ -81,6 +81,11 @@ set smartindent
 
 let g:is_bash = 1 " enable bash syntax highlight for ft=sh
 
+" https://github.com/amix/vimrc/issues/635
+" The error message when this isn't set is clear as mud, but this mutes it.
+let g:snipMate = { 'snippet_version' : 1 }
+
+
 " 4 space tabs
 set tabstop=4
 set shiftwidth=4
