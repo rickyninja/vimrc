@@ -146,20 +146,20 @@ snippet thel "test helper"
 
 # Lay down boilerplate, and don't go nuts with tab stops.
 snippet tt "test table"
-	var tests = []struct{
+	type testcase struct {
 		name string
-		want string // TODO correct type?
-	}{
-		{${0}},
+		assert func(*testing.T, testcase)
+	}
+	nominal := func(t *testing.T, tc testcase) {
+	}
+	var tests = []testcase{
+		{"nominal", nominal},
 	}
 	for _, tc := range tests {
 		tc := tc
 		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
-			got := ${1:function}(${2})
-			if tc.want != got {
-				t.Errorf("wrong _blank_ got %v want %v", got, tc.want)
-			}
+			tc.assert(t, tc)
 		})
 	}
 
