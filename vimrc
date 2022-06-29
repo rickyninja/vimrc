@@ -98,9 +98,6 @@ set showmatch
 
 colorscheme jeremys     " modified version of asu1dark
 
-" hide netrw file browser banner at top of buffer
-let g:netrw_banner=0
-
 " sets status line to display file format, type, current char ascii,hex codes, current cursor position
 set laststatus=2                    " always show the status line
 set statusline=%F%m%r%h%w\ line\ %l\ of\ %L\ (%p%%)\ col\ %v\ \ \ \%03.3b,0x\%02.2B
