@@ -115,6 +115,11 @@ map Q :q
 " cut or copy some text from one window and paste it in Vim.
 set pastetoggle=<F9>
 
+" autoclose the preview window that pops up during omnicomplete
+augroup completion_preview_close
+  autocmd!
+  autocmd CompleteDone * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
+augroup END
 
 filetype plugin indent on
 
