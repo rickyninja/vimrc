@@ -114,6 +114,9 @@ map Q :q
 " paste mode - this will avoid unexpected effects when you
 " cut or copy some text from one window and paste it in Vim.
 set pastetoggle=<F9>
+set nopaste " off for supertab
+
+let g:SuperTabDefaultCompletionType = "context"
 
 " autoclose the preview window that pops up during omnicomplete
 augroup completion_preview_close

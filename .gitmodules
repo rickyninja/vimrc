@@ -37,3 +37,6 @@
 [submodule "pack/github/start/vim-lsp"]
 	path = pack/github/start/vim-lsp
 	url = https://github.com/prabirshrestha/vim-lsp.git
+[submodule "pack/github/start/supertab"]
+	path = pack/github/start/supertab
+	url = https://github.com/ervandew/supertab.git
