@@ -16,3 +16,5 @@ function! s:Ginkgo()
     AnsiEsc " use AnsiEsc.vim to interpret color codes
 endfunction
 
+" case insensitive search for omnicomplete
+let g:go_code_completion_icase = 1
