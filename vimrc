@@ -145,8 +145,8 @@ nmap <leader>l :set invlist<cr>
 "set listchars=eol:⏎,tab:¬¬,trail:␠,nbsp:⎵
 "au FileType go set listchars+=tab:\ \ 
 
-" git blame on current file
-nmap <leader>gb :!git blame %<cr><cr>
+" git blame near cursor
+nmap <leader>gb :execute "!git blame --date short -L" eval(line(".")-20) "%"<cr>
 
 " Enable tab completion of our script names.
 let scripts_dir = expand('~/.vim/scripts')
