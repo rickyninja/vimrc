@@ -68,15 +68,13 @@ set vb
 " upward until /, also in the pwd then upward until /.
 set tags=./tags;,tags;
 
-" incremental search | ignorecase when searching
-set incsearch
-set ignorecase
+set incsearch " highlight partial search matches
+set ignorecase " ignorecase when searching
+set smartcase " disable ignorecase when explicitly searching for upper case
 
 " syntax highlighting
 syntax on
 
-" autoindent
-"autocmd FileType perl set autoindent|set smartindent
 set smartindent
 
 let g:is_bash = 1 " enable bash syntax highlight for ft=sh
@@ -84,7 +82,6 @@ let g:is_bash = 1 " enable bash syntax highlight for ft=sh
 " https://github.com/amix/vimrc/issues/635
 " The error message when this isn't set is clear as mud, but this mutes it.
 let g:snipMate = { 'snippet_version' : 1 }
-
 
 " 4 space tabs
 set tabstop=4
@@ -102,12 +99,6 @@ colorscheme jeremys     " modified version of asu1dark
 set laststatus=2                    " always show the status line
 set statusline=%F%m%r%h%w\ line\ %l\ of\ %L\ (%p%%)\ col\ %v\ \ \ \%03.3b,0x\%02.2B
 
-" check perl code with :make
-"autocmd FileType perl set makeprg=perl\ -c\ %\ $*
-"autocmd FileType perl set errorformat=%f:%l:%m
-"autocmd FileType perl set autowrite
-"autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
-
 " dont use Q for Ex mode
 map Q :q
 
@@ -118,12 +109,16 @@ set nopaste " off for supertab
 
 let g:SuperTabDefaultCompletionType = "context"
 
-" autoclose the preview window that pops up during omnicomplete
+set completeopt=menuone,longest,preview
+
+" autoclose the preview window that pops up during omnicomplete when done
+" editing
 augroup completion_preview_close
   autocmd!
-  autocmd CompleteDone * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
+  autocmd InsertLeave * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
 augroup END
 
+filetype plugin indent on
 filetype plugin indent on
 
 nmap <silent> <A-Up> :wincmd k<CR>
