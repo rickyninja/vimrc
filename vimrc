@@ -57,9 +57,13 @@ nnoremap <Enter> :CtrlPBuffer<CR>
 " enable backspace to unindent, go to previous line, etc.
 set backspace=indent,eol,start
 
-" location list shortcuts
-nmap <Home> :lp<cr>
-nmap <End> :lne<cr>
+" location list & quickfix list helpers
+nnoremap <expr> <tab> LocationListIsOpen() ? ":lnext\<cr>" : "\<tab>"
+nnoremap <expr> <s-tab> LocationListIsOpen() ? ":lprevious\<cr>" : "\<s-tab>"
+nnoremap <expr> <leader>ll LocationListIsOpen() ? ":lclose\<cr>" : ":lopen\<cr>\<c-w>p"
+nnoremap <expr> <tab> QuickFixIsOpen() ? ":cnext\<cr>" : "\<tab>"
+nnoremap <expr> <s-tab> QuickFixIsOpen() ? ":cprevious\<cr>" : "\<s-tab>"
+nnoremap <expr> <leader>qf QuickFixIsOpen() ? ":cclose\<cr> :close\<cr>" : ":vsplit\<cr> :copen\<cr>\<c-w>p"
 
 " use visual bell instead of beeping
 set vb
@@ -149,6 +153,19 @@ nmap <leader>l :set invlist<cr>
 
 " git blame near cursor
 nmap <leader>gb :execute "!git blame --date short -L" eval(line(".")-20) "%"<cr>
+
+function LocationListIsOpen()
+    return get(getloclist(0, {'winid':0}), 'winid', 0)
+endfunction
+
+function QuickFixIsOpen()
+    for winnr in range(1, winnr('$'))
+        if getwinvar(winnr, '&syntax') == 'qf'
+            return 1
+        endif
+    endfor
+    return
+endfunction
 
 " Enable tab completion of our script names.
 let scripts_dir = expand('~/.vim/scripts')
