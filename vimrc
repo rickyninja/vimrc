@@ -58,12 +58,59 @@ nnoremap <Enter> :CtrlPBuffer<CR>
 set backspace=indent,eol,start
 
 " location list & quickfix list helpers
-nnoremap <expr> <tab> LocationListIsOpen() ? ":lnext\<cr>" : "\<tab>"
-nnoremap <expr> <s-tab> LocationListIsOpen() ? ":lprevious\<cr>" : "\<s-tab>"
-nnoremap <expr> <leader>ll LocationListIsOpen() ? ":lclose\<cr>" : ":lopen\<cr>\<c-w>p"
-nnoremap <expr> <tab> QuickFixIsOpen() ? ":cnext\<cr>" : "\<tab>"
-nnoremap <expr> <s-tab> QuickFixIsOpen() ? ":cprevious\<cr>" : "\<s-tab>"
-nnoremap <expr> <leader>qf QuickFixIsOpen() ? ":cclose\<cr> :close\<cr>" : ":vsplit\<cr> :copen\<cr>\<c-w>p"
+nnoremap <expr> <tab> TabLists()
+nnoremap <expr> <s-tab> ShiftTabLists()
+nnoremap <expr> <leader>ll LocationListToggle()
+nnoremap <expr> <leader>qf QuickFixToggle()
+
+" automatically open quickfix or location list when there are results
+" Having trouble getting this to open the quickfix in a split so I don't lose
+" my original window.
+"augroup listopen
+"    autocmd!
+"    autocmd QuickFixCmdPost [^l]* cwindow
+"    autocmd QuickFixCmdPost l*    lwindow
+"augroup END
+
+function QuickFixToggle()
+    if QuickFixIsOpen()
+        " close and center cursor
+        return ":cclose\<cr> :close\<cr>zz"
+    else
+        " open and return cursor to previous buffer
+        return ":vsplit\<cr> :copen\<cr>\<c-w>p"
+    endif
+endfunction
+
+function LocationListToggle()
+    if LocationListIsOpen()
+        " close and center cursor
+        return ":lclose\<cr>zz"
+    else
+        " open and return cursor to previous buffer
+        return ":lopen\<cr>\<c-w>p"
+    endif
+endfunction
+
+function TabLists()
+    if LocationListIsOpen()
+        return ":lnext\<cr>zz"
+    elseif QuickFixIsOpen()
+        return ":cnext\<cr>zz"
+    else
+        return "\<tab>"
+    endif
+endfunction
+
+function ShiftTabLists()
+    if LocationListIsOpen()
+        return ":lprevious\<cr>zz"
+    elseif QuickFixIsOpen()
+        return ":cprevious\<cr>zz"
+    else
+        return  "\<s-tab>"
+    endif
+endfunction
 
 " use visual bell instead of beeping
 set vb
