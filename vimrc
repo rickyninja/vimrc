@@ -124,6 +124,7 @@ set ignorecase " ignorecase when searching
 set smartcase " disable ignorecase when explicitly searching for upper case
 set wildmenu
 set wildmode=longest:full,full
+set autoread " update buffers automatically when changing git branches
 
 " syntax highlighting
 syntax on
