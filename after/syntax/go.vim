@@ -34,6 +34,7 @@ au FileType go nmap <leader>e <Plug>(go-rename)
 au FileType go nmap <leader>rt <Plug>(go-run-tab)
 au FileType go nmap <leader>rs <Plug>(go-run-split)
 au FileType go nmap <leader>rv <Plug>(go-run-vertical)
+au FileType go nmap <leader>gf :GoFillStruct<cr>
 
 " Personalized leader keybinds
 " TODO find a way to run GoDeclsDir using <cword> as the search text
