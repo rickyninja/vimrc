@@ -121,7 +121,7 @@ set tags=./tags;,tags;
 
 set incsearch " highlight partial search matches
 set ignorecase " ignorecase when searching
-set smartcase " disable ignorecase when explicitly searching for upper case
+set nosmartcase " makes it harder to omnicomplete
 set wildmenu
 set wildmode=longest:full,full
 set autoread " update buffers automatically when changing git branches
