@@ -75,10 +75,10 @@ nnoremap <expr> <leader>qf QuickFixToggle()
 function QuickFixToggle()
     if QuickFixIsOpen()
         " close and center cursor
-        return ":cclose\<cr> :close\<cr>zz"
+        return ":cclose\<cr>zz"
     else
         " open and return cursor to previous buffer
-        return ":vsplit\<cr> :copen\<cr>\<c-w>p"
+        return ":copen\<cr>\<c-w>p"
     endif
 endfunction
 

@@ -17,6 +17,12 @@ endif
 " will be in practice.
 nnoremap <buffer> <silent> <C-]> :LspDefinition<cr>
 
+" override makeprg to also use -x to shellcheck files included via source
+setlocal makeprg=shellcheck\ -f\ gcc\ -x
+" auto run shellcheck and open quickfix on first error
+autocmd BufWritePost * silent make! <afile> | silent redraw! | cwindow |
+ \ if QuickFixIsOpen() | crewind | endif
+
 setlocal keywordprg=:Shelldoc
 
 if !exists(':Shelldoc')
