@@ -40,3 +40,6 @@
 [submodule "pack/github/start/supertab"]
 	path = pack/github/start/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "pack/themes/start/dracula"]
+	path = pack/themes/start/dracula
+	url = https://github.com/dracula/vim.git

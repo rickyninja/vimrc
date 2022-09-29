@@ -1,3 +1,8 @@
+" Enable language specific vim config within ~/.vim/ftplugin.
+" Keep this near top of vimrc so ftplugin files are loaded before
+" colorschemes, highligting, etc.
+filetype plugin indent on
+
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
@@ -126,9 +131,6 @@ set wildmenu
 set wildmode=longest:full,full
 set autoread " update buffers automatically when changing git branches
 
-" syntax highlighting
-syntax on
-
 set smartindent
 
 let g:is_bash = 1 " enable bash syntax highlight for ft=sh
@@ -147,7 +149,14 @@ set shiftround
 " show matching brackets
 set showmatch
 
-colorscheme jeremys     " modified version of asu1dark
+" syntax highlighting
+syntax enable
+"colorscheme jeremys     " modified version of asu1dark
+packadd! dracula
+colorscheme dracula
+" alter dracula to provide darker background for better contrast
+highlight Normal ctermbg=NONE
+
 
 " don't highlight TODO text
 highlight clear TODO
@@ -175,9 +184,6 @@ augroup completion_preview_close
   autocmd!
   autocmd InsertLeave * if !&previewwindow && &completeopt =~ 'preview' | silent! pclose | endif
 augroup END
-
-filetype plugin indent on
-filetype plugin indent on
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
