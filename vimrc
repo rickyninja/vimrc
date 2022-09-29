@@ -235,7 +235,3 @@ if index(split($PATH, ':'), scripts_dir) < 0
 endif
 
 source ~/.vim/coc.vim
-
-" Enable pathogen
-execute pathogen#infect()
-
