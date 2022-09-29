@@ -234,6 +234,8 @@ if index(split($PATH, ':'), scripts_dir) < 0
     call setenv('PATH', scripts_dir.':'.$PATH)
 endif
 
+source ~/.vim/coc.vim
+
 " Enable pathogen
 execute pathogen#infect()
 

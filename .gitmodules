@@ -19,27 +19,12 @@
 [submodule "bundle/vim-plugin-AnsiEsc"]
 	path = bundle/vim-plugin-AnsiEsc
 	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
-[submodule "pack/snipmate/start/snipmate"]
-	path = pack/snipmate/start/snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "pack/tlib/start/tlib"]
-	path = pack/tlib/start/tlib
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "pack/vim-addon-mw-utils/start/vim-add-mw-utils"]
-	path = pack/vim-addon-mw-utils/start/vim-add-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "pack/github/start/vim-python-pep8-indent"]
 	path = pack/github/start/vim-python-pep8-indent
 	url = https://github.com/Vimjas/vim-python-pep8-indent.git
-[submodule "pack/github/start/async.vim"]
-	path = pack/github/start/async.vim
-	url = https://github.com/prabirshrestha/async.vim.git
-[submodule "pack/github/start/vim-lsp"]
-	path = pack/github/start/vim-lsp
-	url = https://github.com/prabirshrestha/vim-lsp.git
-[submodule "pack/github/start/supertab"]
-	path = pack/github/start/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "pack/themes/start/dracula"]
 	path = pack/themes/start/dracula
 	url = https://github.com/dracula/vim.git
+[submodule "pack/github/start/coc.nvim"]
+	path = pack/github/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
