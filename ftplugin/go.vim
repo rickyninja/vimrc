@@ -39,3 +39,6 @@ let g:go_highlight_format_strings = 1
 " Enabling variable declarations or assignments is too much color.
 "let g:go_highlight_variable_declarations = 1
 "let g:go_highlight_variable_assignments = 1
+
+nmap <leader>t <Plug>(go-test)
+nmap <leader>tt <Plug>(go-test-func)
