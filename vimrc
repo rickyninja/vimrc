@@ -153,10 +153,9 @@ set showmatch
 syntax enable
 "colorscheme jeremys     " modified version of asu1dark
 packadd! dracula
-colorscheme dracula
 " alter dracula to provide darker background for better contrast
-highlight Normal ctermbg=NONE
-
+let g:dracula_colorterm = 0
+colorscheme dracula
 
 " don't highlight TODO text
 highlight clear TODO
