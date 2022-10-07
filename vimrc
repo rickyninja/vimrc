@@ -155,6 +155,21 @@ syntax enable
 packadd! dracula
 " alter dracula to provide darker background for better contrast
 let g:dracula_colorterm = 0
+
+" Can't use color names like DraculaOrange; color value reference.
+"let g:dracula#palette.cyan      = ['#8BE9FD', 117]
+"let g:dracula#palette.green     = ['#50FA7B',  84]
+"let g:dracula#palette.orange    = ['#FFB86C', 215]
+"let g:dracula#palette.pink      = ['#FF79C6', 212]
+"let g:dracula#palette.purple    = ['#BD93F9', 141]
+"let g:dracula#palette.red       = ['#FF5555', 203]
+"let g:dracula#palette.yellow    = ['#F1FA8C', 228]
+augroup dracula_customization
+    autocmd!
+    " Make the active buffer more visible.
+    autocmd ColorScheme dracula highlight StatusLine ctermfg=215
+augroup END
+
 colorscheme dracula
 
 " don't highlight TODO text
