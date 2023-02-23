@@ -242,6 +242,9 @@ endfunction
 " configure vim-lsp not to highlight words under cursor
 let g:lsp_document_highlight_enabled = 0
 
+" set filetype to microsoft assembly for .asm files
+autocmd BufNew,BufRead *.ASM set ft=masm
+
 " Enable tab completion of our script names.
 let scripts_dir = expand('~/.vim/scripts')
 if index(split($PATH, ':'), scripts_dir) < 0
