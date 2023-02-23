@@ -217,7 +217,7 @@ au BufNewFile,BufRead *.tt2 setf tt2
 set modeline
 set modelines=5
   
-nmap <leader>l :set invlist<cr>
+"nmap <leader>l :set invlist<cr>
 "set list
 "set listchars=eol:¬,tab:▸\
 "set listchars=eol:⏎,tab:¬¬,trail:␠,nbsp:⎵

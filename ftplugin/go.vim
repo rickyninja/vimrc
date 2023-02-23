@@ -52,6 +52,7 @@ let g:go_highlight_format_strings = 1
 nmap <leader>r <Plug>(go-run)
 nmap <leader>b <Plug>(go-build)
 nmap <leader>t <Plug>(go-test)
+nmap <leader>tf <Plug>(go-test-func)
 nmap <leader>c <Plug>(go-coverage-toggle)
 nmap <leader>ds <Plug>(go-def-split)
 nmap <leader>dv <Plug>(go-def-vertical)
@@ -68,5 +69,4 @@ nmap <leader>rv <Plug>(go-run-vertical)
 nmap <leader>gf :GoFillStruct<cr>
 " TODO find a way to run GoDeclsDir using <cword> as the search text
 nmap <leader>f :GoDeclsDir<cr>
-nmap <leader>t <Plug>(go-test)
-nmap <leader>tt <Plug>(go-test-func)
+nmap <leader>l <Plug>(go-metalinter)
