@@ -28,3 +28,6 @@
 [submodule "pack/github/start/coc.nvim"]
 	path = pack/github/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "pack/github/start/vim-hcl"]
+	path = pack/github/start/vim-hcl
+	url = https://github.com/jvirtanen/vim-hcl.git
