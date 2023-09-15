@@ -151,11 +151,12 @@ snippet tt "test table"
 		assert func(*testing.T, testcase)
 	}
 
-	nominal := func(t *testing.T, tc testcase) {
-	}
-
 	var tests = []testcase{
-		{"nominal", nominal},
+		{
+			name: "nominal",
+			assert:  func(t *testing.T, tc testcase) {
+			},
+		},
 	}
 
 	for _, tc := range tests {
